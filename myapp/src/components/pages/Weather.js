@@ -4,7 +4,6 @@ import { useState } from "react";
 const Weather = () => {
 
     const [inputValue,setValue] = useState(" ");
-    const [cityState,setState] = useState(" ");
     const [city,setCity] = useState(" ");
     const [temp,setTemp] = useState(" ");
 
@@ -13,22 +12,20 @@ const Weather = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=imperial&appid=faf8aef7239ae630b461ea5e265fabb5&lang=de`)
 	        .then(response => response.json())
 	        .then(data => {console.log(data)
-                setState("Stadt")
                 setCity(data.name)
-                setTemp('Temperatur: ' + ((data.main.temp - 32) * 0.5556).toFixed() + ' °C')
+                setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C')
                 })
 	        .catch(err => console.error(err));
     }
 
     return(
         <>
-        <input className="weatherin" onChange={(e) => {
+        <input className="temp-search" onChange={(e) => {
             setValue(e.target.value)
         }}></input>
         <button className="search-weather" onClick={fetchData}>Search</button>
-        <h3>{cityState}</h3>
-        <p>{city}</p>
-        <p>{temp}</p>
+        <p className="city-temp">{city}</p>
+        <h1 className="temp">{temp}</h1>
         </>
     )
 }
