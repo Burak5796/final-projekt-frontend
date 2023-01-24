@@ -18,7 +18,7 @@ const Main = () => {
     const fetchWikipedia = () => {
         fetch('https://de.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=' + resullt + '&origin=*')
         .then((response) => response.json())
-        .then((data) => setState({description: data.query.pages[Object.keys(data.query.pages)[0]].extract}));
+        .then((data) =>  console.log(data) + setState({description: data.query.pages[Object.keys(data.query.pages)[0]].extract}));
         console.log(state);
     }
 
