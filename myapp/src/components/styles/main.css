@@ -1,3 +1,73 @@
 .main-header{
     text-align: center;
 }
+
+.first-column{
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.flex{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 30vw;
+    height: 30vh;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.flex:hover{
+    transition: 3s;
+    height: 31vh;
+    width: 31vw;
+}
+
+.berlin{
+    position: relative;
+}
+
+.berlin-text{
+    position: absolute;
+    bottom: 8px;
+    right: 5vw;
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+    .first-column{
+        margin-left: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .flex{
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .first-column{
+        margin-left: 0px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .second-column{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .flex{
+        width: 100%;
+    }
+}
+
+
+
+
