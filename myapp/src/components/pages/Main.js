@@ -45,6 +45,7 @@ const Main = () => {
           className="d-block w-100"
           src="https://www.germany.travel/media/redaktion/content/bundeslaender/berlin/Berlin_Brandenburger_Tor_im_Sonnenuntergang_Leitmotiv_German_Summer_Cities.jpg"
           alt="Second slide"
+          
         />
 
         <Carousel.Caption>
