@@ -22,7 +22,16 @@ const SearchWeather = () => {
 	        .then(data => {console.log(data)
                 if(data.weather[0].main === 'Clouds') {
                     picWeather.style.backgroundImage = "url('https://i.gifer.com/origin/dd/ddedd3a2f4a3995d8cd1a8ab2033c9ce.gif')";
-                }
+                    picWeather.style.backgroundRepeat = "no-repeat" 
+                } else if(data.weather[0].main === 'Clear') {
+                    picWeather.style.backgroundImage = "url('https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/12/sky-sunny-clouds-cloudy.jpg')";
+                } else if(data.weather[0].main === 'Rain') {
+                    picWeather.style.backgroundImage = "url(' ')";
+                } else if(data.weather[0].main === 'Snow') {
+                    picWeather.style.backgroundImage = "url(' ')";
+                } else if(data.weather[0].main === 'Drizzle') {
+                    picWeather.style.backgroundImage = "url(' ')";
+                } 
                 setCity(data.name)
                 console.log(inputValue);
                 setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C')
@@ -30,6 +39,8 @@ const SearchWeather = () => {
                 })
 	        .catch(err => console.error(err));
     }
+
+    
 
     return(
         <>

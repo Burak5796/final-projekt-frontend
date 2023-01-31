@@ -1,6 +1,6 @@
 
 
-const Weather = () => {
+const Details = () => {
     return(
         <>
         <h1>Hi</h1>
@@ -8,4 +8,4 @@ const Weather = () => {
     )
 }
 
-export default Weather;
+export default Details;
