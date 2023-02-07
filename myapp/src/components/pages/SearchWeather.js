@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/searchweather.css';
+import Border from "./Border.js";
 
 
 
@@ -21,15 +22,16 @@ const SearchWeather = () => {
 	        .then(response => response.json())
 	        .then(data => {console.log(data)
                 if(data.weather[0].main === 'Clouds') {
-                    picWeather.style.backgroundImage = "url('https://i.gifer.com/origin/dd/ddedd3a2f4a3995d8cd1a8ab2033c9ce.gif')";
-                    picWeather.style.backgroundRepeat = "no-repeat" 
+                    picWeather.style.backgroundColor = "#475F6C";
                 } else if(data.weather[0].main === 'Clear') {
-                    picWeather.style.backgroundImage = "url('https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/12/sky-sunny-clouds-cloudy.jpg')";
+                    picWeather.style.backgroundColor = "#3494D6";
                 } else if(data.weather[0].main === 'Rain') {
                     picWeather.style.backgroundImage = "url(' ')";
                 } else if(data.weather[0].main === 'Snow') {
-                    picWeather.style.backgroundImage = "url(' ')";
+                    picWeather.style.backgroundImage = "";
                 } else if(data.weather[0].main === 'Drizzle') {
+                    picWeather.style.backgroundImage = "url(' ')";
+                } else if(data.weather[0].main === 'Mist') {
                     picWeather.style.backgroundImage = "url(' ')";
                 } 
                 setCity(data.name)
@@ -45,13 +47,14 @@ const SearchWeather = () => {
     return(
         <>
         <div className="search-container">
-        <input className="temp-search" onChange={(e) => {
+        <input className="temp-search" placeholder="Suche" onChange={(e) => {
             setValue(e.target.value)
         }}></input>
         <button className="search-weather" onClick={fetchData}>Search</button>
         <div className="weather-img">
-        <p className="city-temp">{city}</p>
-        <h1 className="temp">{temp}</h1>
+            <Border/>
+        <h1 className="city-temp">{city}</h1>
+        <h2 className="temp">{temp}</h2>  
         </div>
         </div>
         </>

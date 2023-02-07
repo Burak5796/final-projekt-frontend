@@ -122,8 +122,7 @@ const Main = () => {
         />
         <Carousel.Caption>
           <h3 className='la-head'>Los Angeles</h3>
-          <i className="fa-solid fa-cloud" style={{fontSize: 35}}></i>
-          <span className='para-city'>{la}</span>
+          <p className='para-city'>{la}</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
