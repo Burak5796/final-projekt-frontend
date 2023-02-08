@@ -1,11 +1,13 @@
 .border{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .brd{
     height: 17vh;
     width: 15vw;
+    color: white;
+    margin-left: 5px;
 }
 
 #brd-rom,

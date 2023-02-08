@@ -47,12 +47,15 @@ const SearchWeather = () => {
     return(
         <>
         <div className="search-container">
+        <div className="input-container">
         <input className="temp-search" placeholder="Suche" onChange={(e) => {
             setValue(e.target.value)
         }}></input>
-        <button className="search-weather" onClick={fetchData}>Search</button>
-        <div className="weather-img">
-            <Border/>
+        <br/>
+        <button className="search-btn" onClick={fetchData}>Search</button>
+        </div>
+        <Border />
+        <div className="weather-bg">
         <h1 className="city-temp">{city}</h1>
         <h2 className="temp">{temp}</h2>  
         </div>

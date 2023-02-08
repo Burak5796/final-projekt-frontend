@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SearchWeather from './SearchWeather.js';
+import SearchWeather from '../main-components/SearchWeather.js';
 import Carousel from 'react-bootstrap/Carousel';
 import '../styles/main.css';
 
