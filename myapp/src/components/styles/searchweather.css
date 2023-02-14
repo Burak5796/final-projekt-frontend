@@ -17,7 +17,6 @@
     height: 50px;
     border-radius: 15px;
     margin-left: 5px;
-    margin-bottom: 100px;
 }
 
 .weather-bg{
@@ -27,20 +26,28 @@
     border-radius: 15% 15%;
     filter: brightness(1.2);
     margin: auto;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .upper-brd{
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  /*  display: none; */
 }
 
 .bot-brd{
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 20px;
+    /* display: none; */
+}
+
+.display-none{
+    display: none;
+}
+
+.display-flex{
+    display: flex;
 }
 
 .inner-brd-row{
@@ -57,9 +64,31 @@
 }
 
 .city-temp{
-    padding-top: 120px;
+    padding-top: 50px;
+}
+
+.timestamp{
+    font-size: 3.7vw;
+    padding-top: 10px;
+}
+
+.time-temp{
+    font-size: 4.2vw;
 }
 
 .temp{
     font-size: 40px;
+}
+
+.fa-solid{
+    font-size: 4vw;
+}
+
+
+@media screen and (min-width: 450px) {
+
+    .timestamp{
+        padding-top: 0;
+    }
+    
 }

@@ -74,6 +74,7 @@ const Main = () => {
     
     return(
         <>
+        <h1 className='headline'>TWP Travel Weather App</h1>
         <div className='main-container' onLoad={fetching}>
         <Carousel>
       <Carousel.Item>

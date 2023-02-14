@@ -14,7 +14,7 @@ const Picture = () => {
             </div>
             <div className="brd" id='brd-la'>
                 <img className='brd-pic' src='https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/Los%20Angeles/griffith-observatory-la.jpg' alt='los angeles'></img>
-                <span className='la-text'>Los Angeles</span>
+                <span className='la-text'>Berlin</span>
             </div>
             <div className="brd" id='brd-london'>
                 <img className='brd-pic' src='https://cdn.pixabay.com/photo/2019/08/24/09/36/london-4427283_960_720.jpg' alt='london'></img>

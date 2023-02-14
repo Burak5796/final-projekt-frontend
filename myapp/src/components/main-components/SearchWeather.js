@@ -9,20 +9,39 @@ const SearchWeather = () => {
 
     const picWeather = document.querySelector('.weather-bg');
 
+
     const [inputValue,setValue] = useState(" ");
     const [city,setCity] = useState(" ");
     const [temp,setTemp] = useState(" ");
     const [today,setDate] = useState(" ");
 
+    const [display,setDisplay] = useState(false)
 
-    // useStates for 3-Hour timestamp
 
-    const [firstHour,setFirst] = useState(" ");
-    const [secHour,setSec] = useState(" ");
-    const [thirdHour,setThird] = useState(" ");
-    const [fourthHour,setFourth] = useState(" ");
-    const [fifthHour,setFifth] = useState(" ");
-    
+
+
+    // useStates for Days timestamp
+
+    const [firstDay,setFirst] = useState(" ");
+    const [secDay,setSec] = useState(" ");
+    const [thirdDay,setThird] = useState(" ");
+    const [fourthDay,setFourth] = useState(" ");
+    const [fifthDay,setFifth] = useState(" ");
+    const [sixthDay,setSix] = useState(" ");
+    const [seventhDay,setSeven] = useState(" ");
+
+
+    // useStates for daily temps
+
+    const [firstTemp,setFirstTemp] = useState(" ");
+    const [secTemp,setSecTemp] = useState(" ");
+    const [thirdTemp,setThirdTemp] = useState(" ");
+    const [fourthTemp,setFourthTemp] = useState(" ");
+    const [fifthTemp,setFifthTemp] = useState(" ");
+    const [sixthTemp,setSixthTemp] = useState(" ");
+
+
+
     const date = new Date().toLocaleDateString('de-DE');
     
 
@@ -40,22 +59,28 @@ const SearchWeather = () => {
                 if(data.weather[0].main === 'Clouds') {
                     picWeather.style.backgroundColor = "#475F6C";
                     picWeather.style.border = "1px solid black";
+
                 } else if(data.weather[0].main === 'Clear') {
                     picWeather.style.backgroundColor = "#3494D6";
                     picWeather.style.border = "1px solid black";
+
                 } else if(data.weather[0].main === 'Rain') {
                     picWeather.style.backgroundImage = "url(' ')";
                     picWeather.style.border = "1px solid black";
+
                 } else if(data.weather[0].main === 'Snow') {
                     picWeather.style.backgroundImage = "";
                     picWeather.style.border = "1px solid black";
+
                 } else if(data.weather[0].main === 'Drizzle') {
                     picWeather.style.backgroundImage = "url(' ')";
                     picWeather.style.border = "1px solid black";
+
                 } else if(data.weather[0].main === 'Mist') {
                     picWeather.style.backgroundImage = "url(' ')";
                     picWeather.style.border = "1px solid black";
                 }
+
                 setCity(data.name)
                 console.log(inputValue);
                 setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C')
@@ -68,26 +93,46 @@ const SearchWeather = () => {
                 console.log('lon:',lon,'lat:',lat);
 
 
-                // fetch für 3-Hour Steps
+                // fetch für Days Steps
 
-                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=15&units=imperial&appid=faf8aef7239ae630b461ea5e265fabb5&lang=de`)
+                fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant&timezone=Europe%2FBerlin`)
 	            .then(res => res.json())
 	            .then(dat => {console.log('hier',dat)
 
 
-                // set times for each
+                // set days for each
 
-                const firstCast = new Date(dat.list[1].dt_txt).toLocaleString("de-DE").replace(",", " ");
-                const secCast = new Date(dat.list[2].dt_txt).toLocaleString("de-DE").replace(",", " ");
-                const thirdCast = new Date(dat.list[3].dt_txt).toLocaleString("de-DE").replace(",", " ");
-                const fourthCast = new Date(dat.list[4].dt_txt).toLocaleString("de-DE").replace(",", " ");
-                const fifthCast = new Date(dat.list[5].dt_txt).toLocaleString("de-DE").replace(",", " ");
+                const options = {weekday: "long"};
 
-                setFirst(firstCast);
-                setSec(secCast);
-                setThird(thirdCast);
-                setFourth(fourthCast);
-                setFifth(fifthCast);
+                const day1 = new Date(dat.daily.time[0]);
+                const day2 = new Date(dat.daily.time[1]);
+                const day3 = new Date(dat.daily.time[2]);
+                const day4 = new Date(dat.daily.time[3]);
+                const day5 = new Date(dat.daily.time[4]);
+                const day6 = new Date(dat.daily.time[5]);
+                const day7 = new Date(dat.daily.time[6]);
+
+
+                setFirst(new Intl.DateTimeFormat("de-DE", options).format(day1));
+                setSec(new Intl.DateTimeFormat("de-DE", options).format(day2));
+                setThird(new Intl.DateTimeFormat("de-DE", options).format(day3));
+                setFourth(new Intl.DateTimeFormat("de-DE", options).format(day4));
+                setFifth(new Intl.DateTimeFormat("de-DE", options).format(day5));
+                setSix(new Intl.DateTimeFormat("de-DE", options).format(day6));
+                setSeven(new Intl.DateTimeFormat("de-DE", options).format(day7));
+
+
+                // set temp for days
+
+
+                setFirstTemp(dat.daily.temperature_2m_max[1].toFixed() + ' °C');
+                setSecTemp(dat.daily.temperature_2m_max[2].toFixed() + ' °C');
+                setThirdTemp(dat.daily.temperature_2m_max[3].toFixed() + ' °C');
+                setFourthTemp(dat.daily.temperature_2m_max[4].toFixed() + ' °C');
+                setFifthTemp(dat.daily.temperature_2m_max[5].toFixed() + ' °C');
+                setSixthTemp(dat.daily.temperature_2m_max[6].toFixed() + ' °C');
+                
+                
                 })
                 })
 	        .catch(err => console.error(err));
@@ -98,6 +143,7 @@ const SearchWeather = () => {
 
     return(
         <>
+        <Picture />
         <div className="search-container">
         <div className="input-container">
         <input className="temp-input" placeholder="Suche" onChange={(e) => {
@@ -106,28 +152,43 @@ const SearchWeather = () => {
         <br/>
         <button className="search-btn" onClick={fetchData}>Search</button>
         </div>
-        <Picture />
         <div className="weather-bg">
         <h1 className="city-temp">{city}</h1>
-        <h2>{today}</h2>
+        <h3>{firstDay}</h3>
+        <h4>{today}</h4>
         <h2 className="temp">{temp}</h2>
-        <div className="upper-brd">
+        <div className={`upper-brd ${display ? "display-flex" : "display-none"}`}>
         <div className="inner-brd-row">
-            <p className="timestamp">{firstHour}</p>
+            <p className="timestamp">{secDay}</p>
+            <i className="fa-solid fa-cloud"></i>
+            <p className="time-temp">{firstTemp}</p>
         </div>
         <div className="inner-brd-row">
-            <p className="timestamp">{secHour}</p>
+            <p className="timestamp">{thirdDay}</p>
+            <i className="fa-solid fa-cloud"></i>
+            <p className="time-temp">{secTemp}</p>
         </div>
         <div className="inner-brd-row">
-            <p className="timestamp">{thirdHour}</p>
+            <p className="timestamp">{fourthDay}</p>
+            <i className="fa-solid fa-cloud"></i>
+            <p className="time-temp">{thirdTemp}</p>
         </div>
         </div>
-        <div className="bot-brd">
+        <div className={`bot-brd ${display ? "display-flex" : "display-none"}`}>
         <div className="inner-brd-bot">
-            <p className="timestamp">{fourthHour}</p>
+            <p className="timestamp">{fifthDay}</p>
+            <i className="fa-solid fa-cloud"></i>
+            <p className="time-temp">{fourthTemp}</p>
         </div>
         <div className="inner-brd-bot">
-            <p className="timestamp">{fifthHour}</p>
+            <p className="timestamp">{sixthDay}</p>
+            <i className="fa-solid fa-cloud"></i>
+            <p className="time-temp">{fifthTemp}</p>
+        </div>
+        <div className="inner-brd-bot">
+            <p className="timestamp">{seventhDay}</p>
+            <i className="fa-solid fa-cloud"></i>
+            <p className="time-temp">{sixthTemp}</p>
         </div>
         </div>
         </div>
