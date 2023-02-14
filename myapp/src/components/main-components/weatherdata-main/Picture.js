@@ -1,10 +1,9 @@
-import '../styles/border.css';
+import '../../styles/midPics.css';
 
-const Border = () => {
+const Picture = () => {
 
     return(
-        <>
-        <div className="border">
+        <div className="main-border">
             <div className="brd" id='brd-rom'>
                 <img className='brd-pic' src='https://wikitravel.org/upload/shared//thumb/4/44/Colosseum%2C_Rome.JPG/200px-Colosseum%2C_Rome.JPG' alt='Rom'></img>
                 <span className='rom-text'>Rom</span>
@@ -22,10 +21,9 @@ const Border = () => {
                 <span className='london-text'>London</span>
             </div>
         </div>
-        </>
     )
 }
 
 
 
-export default Border;
+export default Picture;

@@ -1,5 +1,9 @@
 /* Mobile */
 
+.main-container{
+    background-color: blue;
+}
+
 .main-header{
     text-align: center;
 }

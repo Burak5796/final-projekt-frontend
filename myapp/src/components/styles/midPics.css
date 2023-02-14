@@ -1,13 +1,12 @@
-.border{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.main-border{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
 }
 
 .brd{
-    height: 17vh;
-    width: 15vw;
     color: white;
-    margin-left: 5px;
+    margin-right: 20px;
 }
 
 #brd-rom,
@@ -28,7 +27,7 @@
 .london-text,
 .la-text{
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 0;
     right: 0;
     bottom: 0;
