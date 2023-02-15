@@ -15,7 +15,10 @@ const SearchWeather = () => {
     const [temp,setTemp] = useState(" ");
     const [today,setDate] = useState(" ");
 
-    const [display,setDisplay] = useState(false)
+
+    const [displayBrd,setDisplayBrd] = useState(false);
+    const [displayWbg,setWbg] = useState(false);
+
 
 
 
@@ -56,7 +59,8 @@ const SearchWeather = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=imperial&appid=faf8aef7239ae630b461ea5e265fabb5&lang=de`)
 	        .then(response => response.json())
 	        .then(data => {console.log(data)
-                if(data.weather[0].main === 'Clouds') {
+
+              /*  if(data.weather[0].main === 'Clouds') {
                     picWeather.style.backgroundColor = "#475F6C";
                     picWeather.style.border = "1px solid black";
 
@@ -80,6 +84,11 @@ const SearchWeather = () => {
                     picWeather.style.backgroundImage = "url(' ')";
                     picWeather.style.border = "1px solid black";
                 }
+
+                */
+
+                setDisplayBrd(true);
+                setWbg(true);
 
                 setCity(data.name)
                 console.log(inputValue);
@@ -146,18 +155,19 @@ const SearchWeather = () => {
         <Picture />
         <div className="search-container">
         <div className="input-container">
+            <h3 className="head-input">Um Wetterdaten aus einer beliebigen Stadt zu erhalten nutze unsere Suchfunktion</h3>
         <input className="temp-input" placeholder="Suche" onChange={(e) => {
             setValue(e.target.value);
         }}></input>
         <br/>
         <button className="search-btn" onClick={fetchData}>Search</button>
         </div>
-        <div className="weather-bg">
+        <div className={`weather-bg ${displayWbg ? 'display-weather' : 'display-weather-none'}`}>
         <h1 className="city-temp">{city}</h1>
         <h3>{firstDay}</h3>
         <h4>{today}</h4>
         <h2 className="temp">{temp}</h2>
-        <div className={`upper-brd ${display ? "display-flex" : "display-none"}`}>
+        <div className={`upper-brd ${displayBrd ? "display-brd-flex" : "display-brd-none"}`}>
         <div className="inner-brd-row">
             <p className="timestamp">{secDay}</p>
             <i className="fa-solid fa-cloud"></i>
@@ -174,7 +184,7 @@ const SearchWeather = () => {
             <p className="time-temp">{thirdTemp}</p>
         </div>
         </div>
-        <div className={`bot-brd ${display ? "display-flex" : "display-none"}`}>
+        <div className={`bot-brd ${displayBrd ? "display-brd-flex" : "display-brd-none"}`}>
         <div className="inner-brd-bot">
             <p className="timestamp">{fifthDay}</p>
             <i className="fa-solid fa-cloud"></i>
@@ -192,6 +202,10 @@ const SearchWeather = () => {
         </div>
         </div>
         </div>
+        </div>
+        <div className="details-container">
+        <h4 className="details-head">Für eine detaillierte Suche für deine Stadt klicke hier</h4>
+        <button className="details-btn">Click !</button>
         </div>
         </>
     )

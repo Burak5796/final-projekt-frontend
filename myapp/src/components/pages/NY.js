@@ -1,6 +1,6 @@
 
 
-const Details = () => {
+const NY = () => {
     return(
         <>
         <h1>Hi</h1>
@@ -8,4 +8,4 @@ const Details = () => {
     )
 }
 
-export default Details;
+export default NY;

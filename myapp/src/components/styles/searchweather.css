@@ -3,6 +3,10 @@
     text-align: center;
 }
 
+.head-input{
+    margin-bottom: 30px;
+}
+
 .temp-input{
     margin:auto;
     height: 50px;
@@ -27,6 +31,16 @@
     filter: brightness(1.2);
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.display-weather{
+    display: block;
+    background-color: #475F6C;
+}
+
+.display-weather-none{
+    display: none;
 }
 
 .upper-brd{
@@ -42,11 +56,11 @@
     /* display: none; */
 }
 
-.display-none{
+.display-brd-none{
     display: none;
 }
 
-.display-flex{
+.display-brd-flex{
     display: flex;
 }
 
@@ -84,11 +98,26 @@
     font-size: 4vw;
 }
 
+.details-container{
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.details-btn{
+    border-radius: 15px;
+    height: 40px;
+    background-color: rgb(0, 146, 243);
+    color: white;
+}
+
+
+
+/* Tablet */
 
 @media screen and (min-width: 450px) {
 
     .timestamp{
         padding-top: 0;
     }
-    
 }

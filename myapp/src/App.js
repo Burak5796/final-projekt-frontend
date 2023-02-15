@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './components/pages/Main.js';
-import Details from './components/pages/Details.js';
+import NY from './components/pages/NY.js';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Main/>}/>
-      <Route path='/info' element={<Details/>} />
+      <Route path='/ny' element={<NY/>} />
     </Routes>
     </BrowserRouter>
   );
