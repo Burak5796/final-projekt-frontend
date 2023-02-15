@@ -32,11 +32,11 @@
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    background-color: #475F6C;
 }
 
 .display-weather{
     display: block;
-    background-color: #475F6C;
 }
 
 .display-weather-none{

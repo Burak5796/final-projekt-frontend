@@ -156,7 +156,7 @@ const SearchWeather = () => {
         <div className="search-container">
         <div className="input-container">
             <h3 className="head-input">Um Wetterdaten aus einer beliebigen Stadt zu erhalten nutze unsere Suchfunktion</h3>
-        <input className="temp-input" placeholder="Suche" onChange={(e) => {
+        <input type="text" className="temp-input" placeholder="Suche" onChange={(e) => {
             setValue(e.target.value);
         }}></input>
         <br/>

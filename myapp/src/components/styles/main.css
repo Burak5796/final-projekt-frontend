@@ -1,17 +1,5 @@
 /* Mobile */
 
-body{
-    background-image: url(https://i.pinimg.com/236x/d6/9a/6b/d69a6be8268f1e2a8da35d6e0fc4a7ab--artsy-photos-color-harmony.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 50px;
-    color: white;
-}
-
-.headline{
-    margin-bottom: 50px;
-}
-
 .main-header{
     text-align: center;
 }
@@ -37,7 +25,6 @@ body{
         height: 700px;
         width: 500px;
     }
-    
 }
 
 
