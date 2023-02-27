@@ -1,6 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
-import '../styles/rom.css';
+import '../styles/example.css';
 import { useState } from 'react';
+import Home from '../main-components/Home.js';
+
 
 const Rom = () => {
 
@@ -20,8 +22,9 @@ const Rom = () => {
 
     return(
         <>
-        <h3 className='headline-roma'>Sehenswürdigkeiten:</h3>
-        <div className='rom-container' onLoad={fetching}>
+        <Home />
+        <h3 className='headline-example'>Sehenswürdigkeiten</h3>
+        <div className='example-container' onLoad={fetching}>
         <Carousel>
       <Carousel.Item>
         <img
@@ -70,11 +73,11 @@ const Rom = () => {
 
         <h3 className='location'>Location:</h3>
         <img className='maps' src='https://www.google.de/maps/vt/data=fGtUOB8nXPk1T4bm-bPZKXC237gzVIAO1mHbcOdP3B14-t9H-WnJbZzWJGoa-_zuuDYTLjP1WUkodAJyRbZE5EzNgmnuo4Os0__O0thXTXS82K3TznHFOREFiHyF_hPCDPiOjxLJUfythAI5tiYLvGM-ToRlh8AtJFlOODYuHte87OCPtZJy_z68d1BkxgglJgAmvBRY7v_kn5vF6mfI9YrSv2Utb67teiWrU02jycOKEcVPwf8' alt='rom'></img>
-        <p className='einwohner'>Einwohnerzahl: 2,873 Millionen</p>
+        <p className='einwohner'>Einwohnerzahl: ~ 2,9 Millionen</p>
         <h2 className='head-wetter'>Wetterdaten</h2>
-        <div className='rom-temp'>
-            <h3 className='roma'>Rom</h3>
-            <h4 className='roma-w'>{rom}</h4>
+        <div className='example-temp'>
+            <h3 className='example'>Rom</h3>
+            <h4 className='example-w'>{rom}</h4>
             <p className='wind'><i className="fa-solid fa-wind"></i> {wind} km/h</p>
         </div>
         </>

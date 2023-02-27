@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/searchweather.css';
-import Picture from "../main-components/weatherdata-main/Picture.js";
 
 
 
@@ -152,10 +151,8 @@ const SearchWeather = () => {
 
     return(
         <>
-        <Picture />
         <div className="search-container">
         <div className="input-container">
-            <h3 className="head-input">Um Wetterdaten aus einer beliebigen Stadt zu erhalten nutze unsere Suchfunktion</h3>
         <input type="text" className="temp-input" placeholder="Suche" onChange={(e) => {
             setValue(e.target.value);
         }}></input>
@@ -202,10 +199,6 @@ const SearchWeather = () => {
         </div>
         </div>
         </div>
-        </div>
-        <div className="details-container">
-        <h4 className="details-head">Für eine detaillierte Suche für deine Stadt klicke hier</h4>
-        <button className="details-btn">Click !</button>
         </div>
         </>
     )

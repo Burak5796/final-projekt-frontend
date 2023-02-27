@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import SearchWeather from '../main-components/SearchWeather.js';
+import Picture from '../main-components/weatherdata-main/Picture.js';
 import Carousel from 'react-bootstrap/Carousel';
 import '../styles/main.css';
+import { Link } from 'react-router-dom';
 
+
+const La = 'https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/Los%20Angeles/griffith-observatory-la.jpg';
+const Uk = 'https://cdn.pixabay.com/photo/2019/08/24/09/36/london-4427283_960_720.jpg';
+const Ny = 'https://image.newyorkcity.de/wp-content/uploads/2014/05/New-Years-Day-in-New-York-View-from-Top-of-the-Rock-335x252.jpg.webp';
+const Rom = 'https://wikitravel.org/upload/shared//thumb/4/44/Colosseum%2C_Rome.JPG/200px-Colosseum%2C_Rome.JPG';
 
 const Main = () => {
 
@@ -74,6 +81,9 @@ const Main = () => {
     
     return(
         <>
+         <h1 className='headline'>TWP Travel Weather App</h1>
+        <h3 className="head-input">Um Wetterdaten aus einer beliebigen Stadt zu erhalten nutze unsere Suchfunktion</h3>
+        <SearchWeather />
         <div className='main-container' onLoad={fetching}>
         <Carousel>
       <Carousel.Item>
@@ -126,7 +136,13 @@ const Main = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-        <SearchWeather />
+    <Picture apiUK={Uk} apiLA={La} apiNY={Ny} apiRom={Rom}/>
+        </div>
+        <div className="details-container">
+        <h4 className="details-head">Für eine detaillierte Suche für deine Stadt klicke hier</h4>
+        <Link to='/details'>
+        <button className="details-btn">Click !</button>
+        </Link>
         </div>
         </>
     )

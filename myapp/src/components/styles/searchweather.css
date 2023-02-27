@@ -1,10 +1,7 @@
 .search-container{
-    margin-top: 150px;
+    margin-top: 30px;
     text-align: center;
-}
-
-.head-input{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .temp-input{
@@ -14,13 +11,13 @@
     border: 0.5px black solid;
     background-color: rgb(192, 192, 192);
     text-align: center;
-    margin-bottom: 10px;
 }
 
 .search-btn{
     height: 50px;
     border-radius: 15px;
-    margin-left: 5px;
+    width: 80px;
+    margin: auto;
 }
 
 .weather-bg{
@@ -31,7 +28,7 @@
     filter: brightness(1.2);
     margin: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     background-color: #475F6C;
 }
 
@@ -96,19 +93,6 @@
 
 .fa-solid{
     font-size: 4vw;
-}
-
-.details-container{
-    margin-top: 25px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.details-btn{
-    border-radius: 15px;
-    height: 40px;
-    background-color: rgb(0, 146, 243);
-    color: white;
 }
 
 
