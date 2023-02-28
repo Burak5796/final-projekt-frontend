@@ -1,7 +1,7 @@
 import '../styles/details.css';
 import Home from '../main-components/Home.js';
 import { useState } from 'react';
-
+import Carousel from 'react-bootstrap/Carousel';
 
 
 
@@ -12,8 +12,18 @@ const Details = () => {
     const [name,setName] = useState(" ");
     const [temp,setTemp] = useState(" ");
 
-    const [displayWbg,setWbg] = useState(false);
+    const [carouselDisplay,setCarousel] = useState(false);
 
+
+    // usestate für bilder,text und pop
+
+    const [carImg,setCarImg] = useState(' ');
+    const [carText,setCarText] = useState(' ');
+    const [pop,setPop] = useState(' ');
+    
+
+
+    const [displayWbg,setWbg] = useState(false);
 
     const fetching = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&units=imperial&appid=faf8aef7239ae630b461ea5e265fabb5&lang=de`)
@@ -25,9 +35,21 @@ const Details = () => {
           setValue(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
           setWind(data.wind.speed.toFixed());
           setName(data.name);
-          
       })
       .catch(err => {console.error(err)})
+
+
+
+      fetch(`http://localhost:4000/details/${value}`)
+        .then(response => response.json())
+      .then(datas => {
+        console.log(datas);
+        setCarousel(true);
+        setCarText(datas[0].descriptionImages);
+        setCarImg(datas[0].img);
+        setPop(datas[0].population)
+    })
+
     }
 
     return(
@@ -42,6 +64,54 @@ const Details = () => {
                 setValue(e.target.value)
             }}></input>
             <button className='search-details' onClick={fetching}>Search</button>
+        </div>
+        <div className={`carousel-container ${carouselDisplay ? 'display-carousel' : 'no-carousel'}`}>
+            <h2 className='headline-img'>Sehenswürdigkeiten</h2>
+        <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={carImg[0]}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3 className='head-city'>{carText[0]}</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={carImg[1]}
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+          <h3 className='head-city'>{carText[1]}</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={carImg[2]}
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <h3 className='head-city'>{carText[2]}</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={carImg[3]}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3 className='head-city'>{carText[3]}</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    <p className='pop'>Einwohnerzahl: {pop}</p>
         </div>
         <div className={`details-bg ${displayWbg ? 'display-weather' : 'display-weather-none'}`}>
             <h2 className='city-name'>{name}</h2>

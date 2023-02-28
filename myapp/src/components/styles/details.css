@@ -2,6 +2,19 @@
     text-align: center;
 }
 
+.no-carousel{
+    display: none;
+}
+
+.display-carousel{
+    display: block;
+    margin-top: 20px;
+}
+
+.headline-img{
+    text-align: center;
+}
+
 .display-weather{
     display: block;
     height: 400px;
@@ -11,7 +24,7 @@
     filter: brightness(1.2);
     margin: auto;
     margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     background-color: #475F6C;
 }
 
