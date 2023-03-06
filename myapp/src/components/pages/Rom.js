@@ -73,6 +73,9 @@ const Rom = () => {
 
         <h3 className='location'>Location:</h3>
         <img className='maps' src='https://www.google.de/maps/vt/data=fGtUOB8nXPk1T4bm-bPZKXC237gzVIAO1mHbcOdP3B14-t9H-WnJbZzWJGoa-_zuuDYTLjP1WUkodAJyRbZE5EzNgmnuo4Os0__O0thXTXS82K3TznHFOREFiHyF_hPCDPiOjxLJUfythAI5tiYLvGM-ToRlh8AtJFlOODYuHte87OCPtZJy_z68d1BkxgglJgAmvBRY7v_kn5vF6mfI9YrSv2Utb67teiWrU02jycOKEcVPwf8' alt='rom'></img>
+        <div className='map-link'>
+        <a href='https://www.google.de/maps/place/Rom,+Italien/data=!4m2!3m1!1s0x132f6196f9928ebb:0xb90f770693656e38?sa=X&ved=2ahUKEwi738mqtrr9AhUUhf0HHa2wCtgQ8gF6BAgNEAI' target='_blank'>Hier zu Maps</a>
+        </div>
         <p className='einwohner'>Einwohnerzahl: ~ 2,9 Millionen</p>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>

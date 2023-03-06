@@ -10,6 +10,10 @@
     border: 1px black solid;
 }
 
+.map-link{
+    text-align: center;
+}
+
 .headline-example{
     margin-top: 10px;
     text-align: center;

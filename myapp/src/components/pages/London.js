@@ -72,7 +72,10 @@ const London = () => {
     </Carousel>
         </div>
         <h3 className='location'>Location</h3>
-        <img className='maps' src='https://www.google.de/maps/vt/data=fGtUOB8nXPk1T4bm-bPZKXC237gzVIAO1mHbcOdP3B14-t9H-WnJbZzWJGoa-_zuuDYTLjP1WUkodAJyRbZE5EzNgmnuo4Os0__O0thXTXS82K3TznHFOREFiHyF_hPCDPiOjxLJUfythAI5tiYLvGM-ToRlh8AtJFlOODYuHte87OCPtZJy_z68d1BkxgglJgAmvBRY7v_kn5vF6mfI9YrSv2Utb67teiWrU02jycOKEcVPwf8' alt='rom'></img>
+        <img className='maps' src='https://www.google.de/maps/vt/data=MqUtu5s0FbF8TRgPoBIgFQouSQGT8E-1gmtLqU_zoaZw4Z4KTZx4ybRM6bhNO-c0D-thGvikyj0dzB5czkLpAZ3hYnQlES-H5M3gKJ530D9-pSzGQZZVlN70DbIKmfZzU9pe9jjy40kyXy5xGaVNCekX-vJ-1ItA78tiYTaQfP1GQcb-jhEfOm5FT0thFq4r9TwbgF4RC2E__0gwp_1G4mk7-lauLzAN72BIr-3XC6vvpqH2zJs' alt='london'></img>
+        <div className='map-link'>
+        <a href='https://www.google.de/maps/place/London,+Vereinigtes+K%C3%B6nigreich/data=!4m2!3m1!1s0x47d8a00baf21de75:0x52963a5addd52a99?sa=X&ved=2ahUKEwjHk4uMtLr9AhWDi_0HHaDADrsQ8gF6BAgVEAI' target='_blank'>Hier zu Maps</a>
+        </div>
         <p className='einwohner'>Einwohnerzahl: ~ 2,9 Millionen</p>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>

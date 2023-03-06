@@ -160,10 +160,9 @@ const SearchWeather = () => {
         <button className="search-btn" onClick={fetchData}>Search</button>
         </div>
         <div className={`weather-bg ${displayWbg ? 'display-weather' : 'display-weather-none'}`}>
-        <h1 className="city-temp">{city}</h1>
-        <h3>{firstDay}</h3>
-        <h4>{today}</h4>
-        <h2 className="temp">{temp}</h2>
+        <h2 className="city-temp">{city}</h2>
+        <h3>{firstDay} : {today}</h3>
+        <h3 className="temp">{temp}</h3>
         <div className={`upper-brd ${displayBrd ? "display-brd-flex" : "display-brd-none"}`}>
         <div className="inner-brd-row">
             <p className="timestamp">{secDay}</p>

@@ -20,6 +20,8 @@ const Details = () => {
     const [carImg,setCarImg] = useState(' ');
     const [carText,setCarText] = useState(' ');
     const [pop,setPop] = useState(' ');
+    const [location,setLocation] = useState(' ');
+    const [map,setMap] = useState(' ');
     
 
 
@@ -32,7 +34,7 @@ const Details = () => {
         console.log(data);
 
           setWbg(true);
-          setValue(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
+          setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
           setWind(data.wind.speed.toFixed());
           setName(data.name);
       })
@@ -47,13 +49,16 @@ const Details = () => {
         setCarousel(true);
         setCarText(datas[0].descriptionImages);
         setCarImg(datas[0].img);
-        setPop(datas[0].population)
+        setPop(datas[0].population);
+        setLocation(datas[0].location);
+        setMap(datas[0].map);
     })
 
     }
 
     return(
         <>
+        <div className='pseudo-body'>
         <Home />
         <div className='arrow'>
         <h2 className='headline-details'>Für eine detaillierte Suche für deine Stadt nutze unsere Suchfunktion</h2>
@@ -66,7 +71,7 @@ const Details = () => {
             <button className='search-details' onClick={fetching}>Search</button>
         </div>
         <div className={`carousel-container ${carouselDisplay ? 'display-carousel' : 'no-carousel'}`}>
-            <h2 className='headline-img'>Sehenswürdigkeiten</h2>
+            <h3 className='headline-img'>Sehenswürdigkeiten</h3>
         <Carousel>
       <Carousel.Item>
         <img
@@ -111,12 +116,17 @@ const Details = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    <p className='pop'>Einwohnerzahl: {pop}</p>
+        <div className='location'>
+          <img className='loc' alt='maps' src={location}></img>
+          <a href={map} target='_blank'>Hier zu Maps</a>
+          <h5 className='pop'>Einwohnerzahl: {pop}</h5>
         </div>
-        <div className={`details-bg ${displayWbg ? 'display-weather' : 'display-weather-none'}`}>
+        </div>
+        <div className={`details-bg ${displayWbg ? 'display-details' : 'display-details-none'}`}>
             <h2 className='city-name'>{name}</h2>
-            <p className='temperature'></p>
-            <p className='windy'><i className="fa-solid fa-wind"></i> {wind} km/h</p>
+            <h4 className='temperature'>{temp}</h4>
+            <h5 className='windy'><i className="fa-solid fa-wind"></i> {wind} km/h</h5>
+        </div>
         </div>
         </>
     )

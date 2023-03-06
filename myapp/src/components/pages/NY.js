@@ -72,6 +72,9 @@ const NY = () => {
 
         <h3 className='location'>Location</h3>
         <img className='maps' src='https://www.google.de/maps/vt/data=pItNEBubyrf18r-eNgXBe6hUpo_1PaHz3yle0MzXGdnaLrmXJMdHXdwqi2DJY6hrhBrdzMbqmY-OFfLuEBKmEGy2j2eecQXoC8mgUUXzL1VHcMB3nZBgGOu80ERA5ZIv383N8J1oxSNMAgPPMGtVbw7a_5wUEzvwwsUlUmE7xAzqhXbnbFStnafoFUZwvtAyx1gofciXiD3262IPsEdqItpUPQOBe3SBLDQx_U_P7ckjP44KdsQ' alt='ny'></img>
+        <div className='map-link'>
+        <a href='https://www.google.de/maps/place/New+York+City,+New+York,+USA/data=!4m2!3m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62?sa=X&ved=2ahUKEwjawILgtbr9AhXTIMUKHWuKBXQQ8gF6BAgTEAI' target='_blank'>Hier zu Maps</a>
+        </div>
         <p className='einwohner'>Einwohnerzahl: ~ 8,5 Millionen</p>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>
