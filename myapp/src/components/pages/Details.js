@@ -41,7 +41,7 @@ const Details = () => {
       .catch(err => {console.error(err)})
 
 
-      const url = process.env.REACT_APP_API || "http://localhost:3000/";
+      const url = process.env.REACT_APP_API || "http://localhost:4000/";
 
       fetch(url + value)
         .then(response => response.json())
