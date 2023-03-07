@@ -64,12 +64,10 @@ const Details = () => {
     }
 
     let displayWetter = "";
-    if(wetter === 'Clouds') {
-      displayWetter = "displayClouds";
-    } else if(wetter === 'Snow') {
+    if(wetter === 'Snow') {
       displayWetter = 'displaySnow'
-    } else if(wetter === 'Rain') {
-      displayWetter = 'displayRain';
+    } else if (wetter) {
+      displayWetter = 'displayDefault';
     }
 
     return(
