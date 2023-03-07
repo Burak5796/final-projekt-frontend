@@ -43,7 +43,7 @@ const Details = () => {
 
       const url = process.env.REACT_APP_API || "http://localhost:4000/details/";
 
-      fetch(url + value)
+      fetch(url + "details/" + value)
         .then(response => response.json())
       .then(datas => {
         setCarousel(true);
