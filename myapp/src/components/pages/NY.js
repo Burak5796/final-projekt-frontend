@@ -75,7 +75,7 @@ const NY = () => {
         <div className='map-link'>
         <a href='https://www.google.de/maps/place/New+York+City,+New+York,+USA/data=!4m2!3m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62?sa=X&ved=2ahUKEwjawILgtbr9AhXTIMUKHWuKBXQQ8gF6BAgTEAI' target='_blank'>Hier zu Maps</a>
         </div>
-        <p className='einwohner'>Einwohnerzahl: ~ 8,5 Millionen</p>
+        <h3 className='einwohner'>Einwohnerzahl : ~ 2,9 Millionen</h3>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>
             <h3 className='example'>New York</h3>

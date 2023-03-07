@@ -6,5 +6,9 @@
 }
 
 .home{
-    color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    margin-top: 10px;
 }

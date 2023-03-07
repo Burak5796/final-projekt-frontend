@@ -76,7 +76,7 @@ const London = () => {
         <div className='map-link'>
         <a href='https://www.google.de/maps/place/London,+Vereinigtes+K%C3%B6nigreich/data=!4m2!3m1!1s0x47d8a00baf21de75:0x52963a5addd52a99?sa=X&ved=2ahUKEwjHk4uMtLr9AhWDi_0HHaDADrsQ8gF6BAgVEAI' target='_blank'>Hier zu Maps</a>
         </div>
-        <p className='einwohner'>Einwohnerzahl: ~ 2,9 Millionen</p>
+        <h3 className='einwohner'>Einwohnerzahl : ~ 2,9 Millionen</h3>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>
             <h3 className='example'>London</h3>

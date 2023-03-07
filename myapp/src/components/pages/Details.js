@@ -22,6 +22,7 @@ const Details = () => {
     const [pop,setPop] = useState(' ');
     const [location,setLocation] = useState(' ');
     const [map,setMap] = useState(' ');
+    const [datas,setDatas] = useState([]);
     
 
 
@@ -31,7 +32,6 @@ const Details = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&units=imperial&appid=faf8aef7239ae630b461ea5e265fabb5&lang=de`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
 
           setWbg(true);
           setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
@@ -41,18 +41,20 @@ const Details = () => {
       .catch(err => {console.error(err)})
 
 
-      const url = process.env.REACT_APP_API || "http://localhost:4000/";
+      const url = process.env.REACT_APP_API || "http://localhost:4000/details/";
 
       fetch(url + value)
         .then(response => response.json())
       .then(datas => {
-        console.log(datas);
         setCarousel(true);
-        setCarText(datas[0].descriptionImages);
+       /* setCarText(datas[0].descriptionImages);
         setCarImg(datas[0].img);
         setPop(datas[0].population);
         setLocation(datas[0].location);
         setMap(datas[0].map);
+        */
+       
+        setDatas(datas[0])
     })
 
     }
@@ -129,6 +131,9 @@ const Details = () => {
             <h5 className='windy'><i className="fa-solid fa-wind"></i> {wind} km/h</h5>
         </div>
         </div>
+        {datas.map(each => {
+          console.log(each.population);
+        })}
         </>
     )
 }

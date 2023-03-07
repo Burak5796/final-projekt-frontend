@@ -76,7 +76,7 @@ const Rom = () => {
         <div className='map-link'>
         <a href='https://www.google.de/maps/place/Rom,+Italien/data=!4m2!3m1!1s0x132f6196f9928ebb:0xb90f770693656e38?sa=X&ved=2ahUKEwi738mqtrr9AhUUhf0HHa2wCtgQ8gF6BAgNEAI' target='_blank'>Hier zu Maps</a>
         </div>
-        <p className='einwohner'>Einwohnerzahl: ~ 2,9 Millionen</p>
+        <h3 className='einwohner'>Einwohnerzahl : ~ 2,9 Millionen</h3>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>
             <h3 className='example'>Rom</h3>
