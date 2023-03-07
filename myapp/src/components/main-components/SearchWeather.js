@@ -153,8 +153,8 @@ const SearchWeather = () => {
         <>
         <div className="search-container">
         <div className="input-container">
-        <input type="text" className="temp-input" placeholder="Suche" onChange={(e) => {
-            setValue(e.target.value);
+        <input type="text" required className="temp-input" placeholder="Suche" onChange={(e) => {
+            setValue(e.target.value)
         }}></input>
         <br/>
         <button className="search-btn" onClick={fetchData}>Search</button>
