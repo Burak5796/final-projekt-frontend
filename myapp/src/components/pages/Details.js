@@ -131,9 +131,6 @@ const Details = () => {
             <h5 className='windy'><i className="fa-solid fa-wind"></i> {wind} km/h</h5>
         </div>
         </div>
-        {datas.map(each => {
-          console.log(each.population);
-        })}
         </>
     )
 }
