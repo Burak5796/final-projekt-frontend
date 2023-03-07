@@ -7,21 +7,22 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const Details = () => {
 
-    const [value,setValue] = useState(" ");
-    const [wind,setWind] = useState(" ");
-    const [name,setName] = useState(" ");
-    const [temp,setTemp] = useState(" ");
+    const [value,setValue] = useState("");
+    const [wind,setWind] = useState("");
+    const [name,setName] = useState("");
+    const [temp,setTemp] = useState("");
+    const [wetter,setWetter] = useState("");
 
     const [carouselDisplay,setCarousel] = useState(false);
 
 
     // usestate für bilder,text und pop
 
-    const [carImg,setCarImg] = useState(' ');
-    const [carText,setCarText] = useState(' ');
-    const [pop,setPop] = useState(' ');
-    const [location,setLocation] = useState(' ');
-    const [map,setMap] = useState(' ');
+    const [carImg,setCarImg] = useState('');
+    const [carText,setCarText] = useState('');
+    const [pop,setPop] = useState('');
+    const [location,setLocation] = useState('');
+    const [map,setMap] = useState('');
     const [datas,setDatas] = useState([]);
     
 
@@ -36,6 +37,7 @@ const Details = () => {
           setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
           setWind(data.wind.speed.toFixed());
           setName(data.name);
+          setWetter(data.weather[0].main)
           if(data.name) {
             setWbg(true);
           }
@@ -59,6 +61,15 @@ const Details = () => {
         setDatas(datas[0])
     })
 
+    }
+
+    let displayWetter = "";
+    if(wetter === 'Clouds') {
+      displayWetter = "displayClouds";
+    } else if(wetter === 'Snow') {
+      displayWetter = 'displaySnow'
+    } else if(wetter === 'Rain') {
+      displayWetter = 'displayRain';
     }
 
     return(
@@ -123,14 +134,16 @@ const Details = () => {
     </Carousel>
         <div className='location'>
           <img className='loc' alt='maps' src={location}></img>
-          <a href={map} target='_blank'>Hier zu Maps</a>
+          <a href={map} target='_blank' rel='noreferrer'>Hier zu Maps</a>
           <h5 className='pop'>Einwohnerzahl: {pop}</h5>
         </div>
         </div>
-        <div className={`details-bg ${displayWbg ? 'display-details' : 'display-details-none'}`}>
+        <div className={`details-bg ${displayWetter}`}>
+          <div>
             <h2 className='city-name'>{name}</h2>
             <h4 className='temperature'>{temp}</h4>
             <h5 className='windy'><i className="fa-solid fa-wind"></i> {wind} km/h</h5>
+          </div>
         </div>
         </div>
         </>
