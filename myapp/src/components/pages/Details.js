@@ -47,12 +47,12 @@ const Details = () => {
         .then(response => response.json())
       .then(datas => {
         setCarousel(true);
-       /* setCarText(datas[0].descriptionImages);
+        setCarText(datas[0].descriptionImages);
         setCarImg(datas[0].img);
         setPop(datas[0].population);
         setLocation(datas[0].location);
         setMap(datas[0].map);
-        */
+      
        
         setDatas(datas[0])
     })
