@@ -6,7 +6,6 @@ import '../styles/searchweather.css';
 
 const SearchWeather = () => {
 
-    const picWeather = document.querySelector('.weather-bg');
 
 
     const [inputValue,setValue] = useState(" ");
@@ -86,8 +85,10 @@ const SearchWeather = () => {
 
                 */
 
-                setDisplayBrd(true);
-                setWbg(true);
+                if(data.name) {
+                    setDisplayBrd(true);
+                    setWbg(true);
+                }
 
                 setCity(data.name)
                 console.log(inputValue);
@@ -153,7 +154,7 @@ const SearchWeather = () => {
         <>
         <div className="search-container">
         <div className="input-container">
-        <input type="text" required='true' className="temp-input" placeholder="Suche" onChange={(e) => {
+        <input type="text" className="temp-input" placeholder="Suche" onChange={(e) => {
             setValue(e.target.value)
         }}></input>
         <br/>

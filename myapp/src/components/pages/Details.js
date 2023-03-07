@@ -32,11 +32,13 @@ const Details = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&units=imperial&appid=faf8aef7239ae630b461ea5e265fabb5&lang=de`)
       .then(res => res.json())
       .then(data => {
-
-          setWbg(true);
+        console.log(data);
           setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
           setWind(data.wind.speed.toFixed());
           setName(data.name);
+          if(data.name) {
+            setWbg(true);
+          }
       })
       .catch(err => {console.error(err)})
 
