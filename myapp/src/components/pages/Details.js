@@ -7,10 +7,15 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const Details = () => {
 
+  // usestate für Daten
+
     const [value,setValue] = useState("");
     const [wind,setWind] = useState("");
     const [name,setName] = useState("");
     const [temp,setTemp] = useState("");
+    const [maxTemp,setMax] = useState("");
+    const [minTemp,setMin] = useState("");
+    const [description,setDescription] = useState("")
     const [wetter,setWetter] = useState("");
 
     const [carouselDisplay,setCarousel] = useState(false);
@@ -25,7 +30,7 @@ const Details = () => {
     const [map,setMap] = useState('');
     const [datas,setDatas] = useState([]);
     
-    const [pseudo,setPseudo] = useState(false)
+    const [pseudo,setPseudo] = useState(false);
     
 
 
@@ -37,6 +42,9 @@ const Details = () => {
       .then(data => {
         console.log(data);
           setTemp(Math.round((data.main.temp - 32) * 0.5556) + ' °C');
+          setMax(Math.round((data.main.temp_max - 32) * 0.5556) + ' °C');
+          setMin(Math.round((data.main.temp_min - 32) * 0.5556) + ' °C');
+          setDescription(data.weather[0].description);
           setWind(data.wind.speed.toFixed());
           setName(data.name);
           setWetter(data.weather[0].main);
@@ -140,14 +148,19 @@ const Details = () => {
         <div className='location'>
           <img className='loc' alt='maps' src={location}></img>
           <a href={map} target='_blank' rel='noreferrer'>Hier zu Maps</a>
-          <h5 className='pop'>Einwohnerzahl: {pop}</h5>
+          <h5 className='pop'>Einwohnerzahl : {pop}</h5>
         </div>
         </div>
         <div className={`details-bg ${displayWetter}`}>
           <div>
             <h2 className='city-name'>{name}</h2>
-            <h4 className='temperature'>{temp}</h4>
+            <div className='stats'>
+            <h2 className='temperature'>{temp}</h2>
+            <h4 className='descript'>{description}</h4>
             <h5 className='windy'><i className="fa-solid fa-wind"></i> {wind} km/h</h5>
+            <h5 className='minmax'>max temp {maxTemp}</h5>
+            <h5 className='minmax'>min temp {minTemp}</h5>
+            </div>
           </div>
         </div>
         </div>

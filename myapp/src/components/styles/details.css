@@ -33,7 +33,6 @@
 
 .loc{
     width: 100vw;
-    object-fit: cover;
     height: 350px;
     border: 1px black solid;
     object-fit: cover;
@@ -48,7 +47,6 @@
 
 .displayDefault{
     display: block;
-    text-align: center;
     height: 400px;
     width: 92vw;
     color: white;
@@ -61,7 +59,6 @@
 }
 
 .displaySnow{
-    text-align: center;
     display: block;
     margin: auto;
     margin-top: 50px;
@@ -90,23 +87,20 @@
     }
 }
 
-.displayRain{
-    text-align: center;
-    display: block;
-    height: 400px;
-    width: 92vw;
-    color: white;
-    border-radius: 15% 15%;
-    filter: brightness(1.2);
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 5px;
-    background-image: url(https://i.gifer.com/origin/b4/b455fb5ef1ba32eec7035ed387793212.gif);
-    background-repeat: no-repeat;
-}
-
 .temperature{
     padding-top: 15px;
+}
+
+.windy{
+    padding-top: 20px
+}
+
+.minmax{
+    padding-top: 15px;
+}
+
+.stats{
+    padding-left: 5px;
 }
 
 .display-details-none{
