@@ -63,6 +63,8 @@ const Details = () => {
 
     }
 
+    // Animation
+
     let displayWetter = "";
     if(wetter === 'Snow') {
       displayWetter = 'displaySnow'
