@@ -53,6 +53,7 @@ const Details = () => {
 
           if(data.name) {
             setWbg(true);
+            setCarousel(true);
           }
       })
       .catch(err => {console.error(err)})
@@ -63,7 +64,6 @@ const Details = () => {
       fetch(url + "details/" + value)
         .then(response => response.json())
       .then(datas => {
-        setCarousel(true);
         setCarText(datas[0].descriptionImages);
         setCarImg(datas[0].img);
         setPop(datas[0].population);
