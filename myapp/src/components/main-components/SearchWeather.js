@@ -92,7 +92,7 @@ const SearchWeather = () => {
 
                 setCity(data.name)
                 console.log(inputValue);
-                setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C')
+                setTemp(Math.round((data.main.temp - 32) * 0.5556) + ' °C')
                 console.log(data.weather[0].main);
                 setDate(date);
 

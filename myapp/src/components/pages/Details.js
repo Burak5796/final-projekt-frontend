@@ -36,13 +36,13 @@ const Details = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-          setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
+          setTemp(Math.round((data.main.temp - 32) * 0.5556) + ' °C');
           setWind(data.wind.speed.toFixed());
           setName(data.name);
           setWetter(data.weather[0].main);
 
           setPseudo(true);
-          
+
           if(data.name) {
             setWbg(true);
           }
