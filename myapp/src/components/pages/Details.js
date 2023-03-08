@@ -25,6 +25,8 @@ const Details = () => {
     const [map,setMap] = useState('');
     const [datas,setDatas] = useState([]);
     
+    const [pseudo,setPseudo] = useState(false)
+    
 
 
     const [displayWbg,setWbg] = useState(false);
@@ -37,7 +39,10 @@ const Details = () => {
           setTemp(((data.main.temp - 32) * 0.5556).toFixed() + ' °C');
           setWind(data.wind.speed.toFixed());
           setName(data.name);
-          setWetter(data.weather[0].main)
+          setWetter(data.weather[0].main);
+
+          setPseudo(true);
+          
           if(data.name) {
             setWbg(true);
           }
@@ -74,7 +79,7 @@ const Details = () => {
 
     return(
         <>
-        <div className='pseudo-body'>
+        <div className={`${pseudo ? 'clicked' : 'pseudo-body'}`}>
         <Home />
         <div className='arrow'>
         <h2 className='headline-details'>Für eine detaillierte Suche für deine Stadt nutze unsere Suchfunktion</h2>
