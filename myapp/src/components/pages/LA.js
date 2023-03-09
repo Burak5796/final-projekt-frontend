@@ -51,32 +51,32 @@ const LA = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://cdn.britannica.com/12/127112-050-F4DD3B7A/British-Museum-London.jpg"
+          src="https://www.universalstudioshollywood.com/tridiondata/ush/en/us/files/images/ush-universal-studios-hollywood-red-carpet-arch-b.jpg"
           alt="Third slide"
         />
 
         <Carousel.Caption>
-          <h3 className='istanbul-head'>British Museum</h3>
+          <h3 className='istanbul-head'>Universal Studios</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://mywowo.net/media/images/cache/roma_foro_romano_02_inizio_percorso_jpg_1200_630_cover_85.jpg"
+          src="https://media.timeout.com/images/105395982/image.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 className='la-head'>Forum Romanum</h3>
+          <h3 className='la-head'>Santa Monica Pier</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
         </div>
         <h3 className='location'>Location</h3>
-        <img className='maps' src='https://www.google.de/maps/vt/data=fGtUOB8nXPk1T4bm-bPZKXC237gzVIAO1mHbcOdP3B14-t9H-WnJbZzWJGoa-_zuuDYTLjP1WUkodAJyRbZE5EzNgmnuo4Os0__O0thXTXS82K3TznHFOREFiHyF_hPCDPiOjxLJUfythAI5tiYLvGM-ToRlh8AtJFlOODYuHte87OCPtZJy_z68d1BkxgglJgAmvBRY7v_kn5vF6mfI9YrSv2Utb67teiWrU02jycOKEcVPwf8' alt='rom'></img>
+        <img className='maps' src='https://www.google.de/maps/vt/data=rinOqa9hlqR43bxiAtDGGyt2rqgFzNAmMdcZaBufLG2WVKLHaNAABwzp26N52caJnjjFD-2hZ3oMUr2s5ULtlRJsZLlp9g2_0-qUILJ_oLCk9hszbIkEMd_XO20kJ6WbqdOc7_Z1i6wTx2ADrpC77l32k1bfGES-H5hTFALDA4Zui2PW1oRzb40sVYotWGpWEqwUSjkBR-ClofTDFco89PISpaZBrHc_zSlV8IFRYTqhmHK4t8o' alt='la'></img>
         <h3 className='einwohner'>Einwohnerzahl : ~ 2,9 Millionen</h3>
         <h2 className='head-wetter'>Wetterdaten</h2>
         <div className='example-temp'>
-            <h3 className='example'>London</h3>
+            <h3 className='example'>Los Angeles</h3>
             <h4 className='example-w'>{la}</h4>
             <p className='wind'><i className="fa-solid fa-wind"></i> {wind} km/h</p>
         </div>

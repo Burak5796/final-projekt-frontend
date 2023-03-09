@@ -62,11 +62,11 @@ const London = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://mywowo.net/media/images/cache/roma_foro_romano_02_inizio_percorso_jpg_1200_630_cover_85.jpg"
+          src="https://res.cloudinary.com/hello-tickets/image/upload/c_limit,f_auto,q_auto,w_1300/v1644765973/wdb9fk6wktpxzqqkdh72.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 className='la-head'>Forum Romanum</h3>
+          <h3 className='la-head'>Tower of london</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
