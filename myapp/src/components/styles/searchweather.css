@@ -101,3 +101,34 @@
         padding-top: 0;
     }
 }
+
+@media screen and (min-width: 750px) {
+
+    .timestamp{
+        padding-top: 0;
+        font-size: x-large;
+    }
+
+    .time-temp{
+        font-size: x-large;
+    }
+
+    .weather-bg{
+        width: 700px;
+    }
+
+    .inner-brd-row{
+        margin-top: 50px;
+        border: 1px solid white;
+        width: 200px;
+        height: 130px;
+    }
+    
+    .inner-brd-bot{
+        border: 1px solid white;
+        width: 200px;
+        height: 130px;
+    }
+
+}
+

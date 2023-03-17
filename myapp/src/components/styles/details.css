@@ -148,3 +148,18 @@
 .windy{
     padding-left: 5px;
 }
+
+@media screen and (min-width: 770px) {
+    .displayDefault{
+        width: 700px;
+    }
+
+    .loc{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        width: 900px;
+        object-fit: cover;
+    }
+}

@@ -76,3 +76,18 @@
     font-size: 16px;
 }
 
+@media screen and (min-width: 750px) {
+    .example-temp{
+        width: 700px;
+        text-align: center;
+    }
+
+    .maps{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        width: 900px;
+        object-fit: cover;
+    }
+}

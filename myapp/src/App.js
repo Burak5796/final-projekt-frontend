@@ -5,6 +5,7 @@ import LA from './components/pages/LA.js';
 import Rom from './components/pages/Rom.js';
 import London from './components/pages/London.js';
 import Details from './components/pages/Details.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {

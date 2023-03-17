@@ -91,11 +91,12 @@ const Details = () => {
         <Home />
         <div className='arrow'>
         <h2 className='headline-details'>Für eine detaillierte Suche für deine Stadt nutze unsere Suchfunktion</h2>
+        <h2>PS: Die Suchfuktion gilt leider nur für Iserlohn, Chicago, Paris und Berlin</h2>
         <i className="fa-solid fa-arrow-down"></i>
         </div>
         <div className='input-container'>
             <input className='value' type='text' onChange={(e) => {
-                setValue(e.target.value)
+                setValue(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1));
             }}></input>
             <button className='search-details' onClick={fetching}>Search</button>
         </div>
