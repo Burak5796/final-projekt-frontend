@@ -90,4 +90,8 @@
         width: 900px;
         object-fit: cover;
     }
+
+    .einwohner{
+        text-align: center;
+    }
 }

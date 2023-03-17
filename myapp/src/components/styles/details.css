@@ -7,7 +7,7 @@
 }
 
 .clicked{
-    height: 292vh;
+    height: 302vh;
     background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/15549a14589707.5628669c64769.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -161,5 +161,13 @@
         margin-top: 50px;
         width: 900px;
         object-fit: cover;
+    }
+
+    .clicked{
+        height: 240vh;
+    }
+
+    .pop{
+        text-align: center;
     }
 }
